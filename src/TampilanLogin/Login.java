@@ -2,10 +2,14 @@ package TampilanLogin;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import TampilannMenu.Menu;
 
 public class Login extends JFrame {
+    private static final String VALID_EMAIL = "dimas.rasyach@gmail.com";
+    private static final String VALID_PASSWORD = "hadiyan9";
 
-    public Login(){
+    public Login() {
         setTitle("NGOMIKMAS!");
         setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,13 +18,13 @@ public class Login extends JFrame {
         Backgrouddanform();
     }
 
-    private void Backgrouddanform(){
+    private void Backgrouddanform() {
         JLayeredPane latar = new JLayeredPane();
-        latar.setBounds(0,0,1440,1024);
+        latar.setBounds(0, 0, 1440, 1024);
 
         ImageIcon Background = new ImageIcon(getClass().getResource("/images/Login.png"));
         JLabel gambar = new JLabel(Background);
-        gambar.setBounds(0,0,1440,1024);
+        gambar.setBounds(0, 0, 1440, 1024);
         latar.add(gambar, Integer.valueOf(0));
 
         JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:18px; font-weight:normal;'>" +
@@ -33,15 +37,15 @@ public class Login extends JFrame {
 
         JLabel labelTeks2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> Email / Register</span></html>");
         labelTeks2.setForeground(Color.WHITE);
-        labelTeks2.setBounds(550, 260, 1000,100);
+        labelTeks2.setBounds(550, 260, 1000, 100);
         latar.add(labelTeks2, Integer.valueOf(2));
 
         JLabel labelTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> Password</span></html>");
         labelTeks3.setForeground(Color.WHITE);
-        labelTeks3.setBounds(550, 340, 1000,100);
+        labelTeks3.setBounds(550, 340, 1000, 100);
         latar.add(labelTeks3, Integer.valueOf(2));
 
-        JPanel form = new JPanel(){
+        JPanel form = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -76,7 +80,7 @@ public class Login extends JFrame {
         form.add(passwordField);
 
         JButton loginButton = new JButton("Login");
-        loginButton.setBounds(50, 235, 300, 30);
+        loginButton.setBounds(50, 240, 300, 30);
         loginButton.setFont(new Font("Poppins", Font.PLAIN, 10));
         loginButton.setForeground(Color.WHITE);
         loginButton.setBackground(Color.decode("#B90F0F"));
@@ -85,18 +89,59 @@ public class Login extends JFrame {
         form.add(loginButton);
 
         JCheckBox rememberMe = new JCheckBox("Remember Me");
-        rememberMe.setBounds(30, 200, 150, 20);
+        rememberMe.setBounds(30, 205, 150, 20);
         rememberMe.setFont(new Font("Poppins", Font.PLAIN, 12));
         rememberMe.setForeground(Color.WHITE);
         rememberMe.setBackground(Color.BLACK);
         form.add(rememberMe);
 
         JLabel registerLabel = new JLabel("Register | Forget Password");
-        registerLabel.setBounds(235, 200, 1000, 20);
+        registerLabel.setBounds(235, 205, 1000, 20);
         registerLabel.setFont(new Font("Poppins", Font.PLAIN, 10));
         registerLabel.setForeground(Color.WHITE);
         registerLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         form.add(registerLabel);
+
+        JLabel errorLabel = new JLabel();
+        errorLabel.setForeground(Color.RED);
+        errorLabel.setFont(new Font("Poppins", Font.PLAIN, 8));
+        errorLabel.setBounds(30, 185, 340, 20);
+        form.add(errorLabel);
+
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email = emailField.getText();
+                String password = new String(passwordField.getPassword());
+
+                if (email.equals(VALID_EMAIL) && password.equals(VALID_PASSWORD)) {
+                    setVisible(false);
+                    new Menu().setVisible(true);
+                } else {
+                    errorLabel.setText("Email atau Password salah. Coba lagi.");
+                    emailField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
+                    passwordField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
+                }
+            }
+        });
+
+        emailField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    passwordField.requestFocus();
+                }
+            }
+        });
+
+        passwordField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    loginButton.doClick();
+                }
+            }
+        });
 
         latar.add(form, Integer.valueOf(1));
 
