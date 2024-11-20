@@ -1,10 +1,9 @@
 package TampilannMenu;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Menu extends JFrame {
-    public Menu(){
+    public Menu() {
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("NGOMIKMAS!");
         setSize(1440, 1024);
@@ -14,7 +13,7 @@ public class Menu extends JFrame {
         background();
     }
 
-    private void background(){
+    private void background() {
         JLayeredPane latar = new JLayeredPane();
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         latar.setBounds(0, 0, 1440, 1024);
@@ -25,6 +24,7 @@ public class Menu extends JFrame {
         latar.add(gambar, Integer.valueOf(0));
         this.add(latar);
     }
+
     public static void main(String[] args) {
         new Menu().setVisible(true);
     }
