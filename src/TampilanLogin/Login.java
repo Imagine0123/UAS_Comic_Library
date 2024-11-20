@@ -12,7 +12,7 @@ public class Login extends JFrame {
     public Login() {
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("NGOMIKMAS!");
-        setSize(1440, 1080);
+        setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -22,11 +22,11 @@ public class Login extends JFrame {
     private void Backgrouddanform() {
         JLayeredPane latar = new JLayeredPane();
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        latar.setBounds(0, 0, 1440, 1080);
+        latar.setBounds(0, 0, 1440, 1024);
 
         ImageIcon Background = new ImageIcon(getClass().getResource("/images/Login.png"));
         JLabel gambar = new JLabel(Background);
-        gambar.setBounds(0, 0, 1440, 1080);
+        gambar.setBounds(0, 0, 1440, 1024);
         latar.add(gambar, Integer.valueOf(0));
 
         JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:18px; font-weight:normal;'>" +
