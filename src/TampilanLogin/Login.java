@@ -10,8 +10,9 @@ public class Login extends JFrame {
     private static final String VALID_PASSWORD = "hadiyan9";
 
     public Login() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("NGOMIKMAS!");
-        setSize(1440, 1024);
+        setSize(screenSize);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -20,11 +21,12 @@ public class Login extends JFrame {
 
     private void Backgrouddanform() {
         JLayeredPane latar = new JLayeredPane();
-        latar.setBounds(0, 0, 1440, 1024);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        latar.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
 
         ImageIcon Background = new ImageIcon(getClass().getResource("/images/Login.png"));
         JLabel gambar = new JLabel(Background);
-        gambar.setBounds(0, 0, 1440, 1024);
+        gambar.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
         latar.add(gambar, Integer.valueOf(0));
 
         JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:18px; font-weight:normal;'>" +
