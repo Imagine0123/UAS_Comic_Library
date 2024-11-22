@@ -9,7 +9,6 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
 public class MenuBar extends JMenuBar {
-
     public MenuBar() {
         setBorderPainted(false);
         setFont(new Font("Poppins", Font.BOLD, 14));

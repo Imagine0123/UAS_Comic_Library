@@ -15,6 +15,7 @@ public class AllComic extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
         background();
+
     }
 
     private void background() {
