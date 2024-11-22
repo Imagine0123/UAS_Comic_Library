@@ -7,7 +7,7 @@ import TampilanHome.Home;
 
 public class Login extends JFrame {
     private static final String VALID_EMAIL = "dimas.rasyach@gmail.com";
-    private static final String VALID_PASSWORD = "hadiyan9";
+    private static final String VALID_PASSWORD = "dimas1234";
 
     public Login() {
         setTitle("NGOMIKMAS!");
