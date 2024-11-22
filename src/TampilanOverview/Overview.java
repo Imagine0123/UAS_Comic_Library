@@ -106,6 +106,6 @@ public class Overview extends JFrame {
 
     public static void main(String[] args) {
         Overview overview = new Overview();
-        overview.setVisible(true);;
+        overview.setVisible(true);
     }
 }
