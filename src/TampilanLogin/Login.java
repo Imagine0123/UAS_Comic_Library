@@ -3,14 +3,13 @@ package TampilanLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import TampilannMenu.Menu;
+import TampilanHome.Home;
 
 public class Login extends JFrame {
     private static final String VALID_EMAIL = "dimas.rasyach@gmail.com";
     private static final String VALID_PASSWORD = "hadiyan9";
 
     public Login() {
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("NGOMIKMAS!");
         setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,7 +20,6 @@ public class Login extends JFrame {
 
     private void Backgrouddanform() {
         JLayeredPane latar = new JLayeredPane();
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         latar.setBounds(0, 0, 1440, 1024);
 
         ImageIcon Background = new ImageIcon(getClass().getResource("/images/Login.png"));
@@ -29,8 +27,7 @@ public class Login extends JFrame {
         gambar.setBounds(0, 0, 1440, 1024);
         latar.add(gambar, Integer.valueOf(0));
 
-        JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:18px; font-weight:normal;'>" +
-                "SELAMAT DATANG DI</span>" +
+        JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:18px; font-weight:normal;'>SELAMAT DATANG DI</span>" +
                 "<span style='font-family:Poppins; font-size:18px; font-weight:bold; font-style:italic;'> NGOMIK</span>" +
                 "<span style='font-family:Poppins; font-size:18px; font-weight:bold; font-style:italic; color:#9B1D21;'>MAS!</span></html>");
         labelTeks1.setForeground(Color.WHITE);
@@ -118,7 +115,7 @@ public class Login extends JFrame {
 
                 if (email.equals(VALID_EMAIL) && password.equals(VALID_PASSWORD)) {
                     setVisible(false);
-                    new Menu().setVisible(true);
+                    new Home().setVisible(true);
                 } else {
                     errorLabel.setText("Email atau Password salah. Coba lagi.");
                     emailField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));

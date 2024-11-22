@@ -1,5 +1,4 @@
-//https://www.figma.com/design/bCeMJiB4m9UijOfI1HEs0t/UAS-PBO?node-id=1-1293&t=TSwe45DwTA3NFtai-4
-package TampilannMenu;
+package TampilanAll;
 
 import TampilanLogin.Login;
 
@@ -8,8 +7,8 @@ import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
-public class Menu extends JFrame {
-    public Menu() {
+public class AllComic extends JFrame {
+    public AllComic() {
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("NGOMIKMAS!");
         setSize(1440, 1024);
@@ -117,7 +116,4 @@ public class Menu extends JFrame {
         this.setJMenuBar(menuBar);
     }
 
-    public static void main(String[] args) {
-        new Menu().setVisible(true);
-    }
 }
