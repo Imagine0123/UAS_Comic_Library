@@ -1,4 +1,4 @@
-package TampilanHome;
+package TampilanOverview;
 
 import TampilanMenu.MenuBar;
 
@@ -6,10 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-public class Home extends JFrame {
-    public Home() {
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        setTitle("NGOMIKMAS!");
+public class Overview extends JFrame {
+    public Overview() {
+        setTitle("Overview");
         setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -36,10 +35,7 @@ public class Home extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Home home = new Home();
-            home.setVisible(true);
-        });
-
+        Overview overview = new Overview();
+        overview.setVisible(true);;
     }
 }

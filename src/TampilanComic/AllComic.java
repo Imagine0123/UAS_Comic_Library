@@ -15,7 +15,6 @@ public class AllComic extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
         background();
-
     }
 
     private void background() {
@@ -37,7 +36,8 @@ public class AllComic extends JFrame {
     }
 
     public static void main(String[] args) {
-        new AllComic().setVisible(true);
+        AllComic allComic = new AllComic();
+        allComic.setVisible(true);
     }
 
 }
