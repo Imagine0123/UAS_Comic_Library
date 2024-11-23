@@ -1,4 +1,4 @@
-package TampilanHome;
+package TampilanComic;
 
 import TampilanMenu.MenuBar;
 
@@ -6,10 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-public class Home extends JFrame {
-    public Home() {
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        setTitle("NGOMIKMAS!");
+public class Newest extends JFrame {
+    public Newest() {
+        setTitle("Newest");
         setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -28,7 +27,7 @@ public class Home extends JFrame {
         latar.add(gambar, Integer.valueOf(0));
         this.add(latar);
 
-        MenuBar menuBar = new MenuBar();
+        TampilanMenu.MenuBar menuBar = new MenuBar();
         menuBar.setOpaque(false);
         menuBar.setForeground(Color.BLACK);
         menuBar.setFont(new Font("Poppins", Font.BOLD, 14));
@@ -36,10 +35,7 @@ public class Home extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Home home = new Home();
-            home.setVisible(true);
-        });
-
+        Newest newest = new Newest();
+        newest.setVisible(true);
     }
 }

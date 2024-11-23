@@ -1,5 +1,9 @@
 package TampilanMenu;
 
+import TampilanBookmark.Bookmark;
+import TampilanComic.AllComic;
+import TampilanComic.Newest;
+import TampilanComic.Popular;
 import TampilanHome.Home;
 import TampilanLogin.Login;
 
@@ -59,19 +63,32 @@ public class MenuBar extends JMenuBar {
         bookmarkMenu.setFont(new Font("Poppins", Font.BOLD, 14));
         JMenuItem bookmarkItem1 = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>View</span></html>");
         bookmarkItem1.setFont(new Font("Poppins", Font.BOLD, 14));
-        JMenuItem bookmarkItem2 = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>Manage</span></html>");
-        bookmarkItem2.setFont(new Font("Poppins", Font.BOLD, 14));
+        bookmarkItem1.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(this).setVisible(false);
+            new Bookmark().setVisible(true);
+        });
         bookmarkMenu.add(bookmarkItem1);
-        bookmarkMenu.add(bookmarkItem2);
 
         JMenu comicListMenu = new JMenu("<html><span style='font-family:Poppins; font-size:15px; font-weight:bold; color:black; '>Comics List</span></html>");
         comicListMenu.setFont(new Font("Poppins", Font.BOLD, 14));
         JMenuItem comicListItem1 = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>All</span></html>");
         comicListItem1.setFont(new Font("Poppins", Font.BOLD, 14));
+        comicListItem1.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(this).setVisible(false);
+            new AllComic().setVisible(true);
+        });
         JMenuItem comicListItem2 = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>Popular</span></html>");
         comicListItem2.setFont(new Font("Poppins", Font.BOLD, 14));
+        comicListItem2.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(this).setVisible(false);
+            new Popular().setVisible(true);
+        });
         JMenuItem comicListItem3 = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>Newest</span></html>");
         comicListItem3.setFont(new Font("Poppins", Font.BOLD, 14));
+        comicListItem3.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(this).setVisible(false);
+            new Newest().setVisible(true);
+        });
         comicListMenu.add(comicListItem1);
         comicListMenu.add(comicListItem2);
         comicListMenu.add(comicListItem3);

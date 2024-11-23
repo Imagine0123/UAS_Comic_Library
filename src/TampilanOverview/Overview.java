@@ -21,7 +21,7 @@ public class Overview extends JFrame {
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         latar.setBounds(0, 0, 1440, 1024);
 
-        ImageIcon Background = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Login.png")));
+        ImageIcon Background = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Background.png")));
         JLabel gambar = new JLabel(Background);
         gambar.setBounds(0, 0, 1440, 1024);
         latar.add(gambar, Integer.valueOf(0));
