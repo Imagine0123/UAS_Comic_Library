@@ -93,16 +93,19 @@ public class MenuBar extends JMenuBar {
         comicListMenu.add(comicListItem2);
         comicListMenu.add(comicListItem3);
 
-        JMenuItem logoutItem = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:bold; color:black;'>Hi, User | Logout</span></html>");
+        JMenu profileMenu = new JMenu("<html><span style='font-family:Poppins; font-size:15px; font-weight:bold; color:black;'>Profile</span></html>");
+        profileMenu.setFont(new Font("Poppins", Font.BOLD, 14));
+        JMenuItem userItem = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>User</span></html>");
+        userItem.setFont(new Font("Poppins", Font.BOLD, 14));
+        JMenuItem logoutItem = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>Logout</span></html>");
         logoutItem.setFont(new Font("Poppins", Font.BOLD, 14));
-        logoutItem.setForeground(Color.WHITE);
-        logoutItem.setOpaque(false);
-        logoutItem.setContentAreaFilled(false);
-        logoutItem.setBorderPainted(false);
         logoutItem.addActionListener(e -> {
             SwingUtilities.getWindowAncestor(this).setVisible(false);
             new Login().setVisible(true);
         });
+
+        profileMenu.add(userItem);
+        profileMenu.add(logoutItem);
 
         add(homeMenu);
         add(bookmarkMenu);
@@ -110,6 +113,6 @@ public class MenuBar extends JMenuBar {
         add(Box.createHorizontalGlue());
         add(searchField);
         add(Box.createRigidArea(new Dimension(10, 0)));
-        add(logoutItem);
+        add(profileMenu);
     }
 }
