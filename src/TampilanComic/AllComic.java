@@ -184,7 +184,7 @@ public class AllComic extends JFrame {
         pstr5.setBounds(950, 410, 250, 393);
         latar.add(pstr5, Integer.valueOf(1));
 
-        JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:16px; font-weight:bold;'> All Comic</span></html>");
+        JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:16px; font-weight:bold;'> All Comics</span></html>");
         labelTeks1.setForeground(Color.WHITE);
         labelTeks1.setBounds(150, 60, 1000, 100);
         latar.add(labelTeks1, Integer.valueOf(1));

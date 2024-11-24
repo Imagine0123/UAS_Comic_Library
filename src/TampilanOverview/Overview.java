@@ -376,7 +376,6 @@ public class Overview extends JFrame {
         chapter2.setBounds(1150, 450, 1000, 100);
         latar.add(chapter2, Integer.valueOf(1));
 
-
         addNumberBox(latar, 975, 595, 20, 20, 3);
         ImageIcon bintang3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Rate (1).png")));
         ImageIcon scaledbntg3 = getScaledIcon(bintang3, 30, 17);
