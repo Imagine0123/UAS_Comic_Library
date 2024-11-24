@@ -1,6 +1,7 @@
 package TampilanComic;
 
 import TampilanMenu.MenuBar;
+import TampilanOverview.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -54,6 +55,63 @@ public class AllComic extends JFrame {
         addNumberBox(latar, 975, 415, 20, 20, 2);
         ImageIcon bintang2 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Rate.png")));
         ImageIcon scaledbntg2 = getScaledIcon(bintang2, 30, 17);
+
+        ImageIcon Poster3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-3.png")));
+        ImageIcon scaledPoster3 = getScaledIcon(Poster3, 110, 160);
+
+        JLabel pstr3 = new JLabel(scaledPoster3);
+        pstr3.setBounds(950, 50, 250, 393);
+        latar.add(pstr3, Integer.valueOf(1));
+
+        ImageIcon Poster4 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-2.png")));
+        ImageIcon scaledPoster4 = getScaledIcon(Poster4, 110, 160);
+
+        JLabel pstr4 = new JLabel(scaledPoster4);
+        pstr4.setBounds(950, 230, 250, 393);
+        latar.add(pstr4, Integer.valueOf(1));
+
+        ImageIcon Poster5 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-4.png")));
+        ImageIcon scaledPoster5 = getScaledIcon(Poster5, 110, 160);
+
+        JLabel pstr5 = new JLabel(scaledPoster5);
+        pstr5.setBounds(950, 410, 250, 393);
+        latar.add(pstr5, Integer.valueOf(1));
+
+        JButton btn9 = new JButton();
+        btn9.setBounds(1020, 166, 110, 160);
+        btn9.setOpaque(false);
+        btn9.setContentAreaFilled(false);
+        btn9.setBorderPainted(false);
+        btn9.setFocusPainted(false);
+        btn9.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn9).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn9, Integer.valueOf(1));
+
+        JButton btn10 = new JButton();
+        btn10.setBounds(1020, 346, 110, 160);
+        btn10.setOpaque(false);
+        btn10.setContentAreaFilled(false);
+        btn10.setBorderPainted(false);
+        btn10.setFocusPainted(false);
+        btn10.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn10).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn10, Integer.valueOf(1));
+
+        JButton btn11 = new JButton();
+        btn11.setBounds(1020, 526, 110, 160);
+        btn11.setOpaque(false);
+        btn11.setContentAreaFilled(false);
+        btn11.setBorderPainted(false);
+        btn11.setFocusPainted(false);
+        btn11.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn11).setVisible(false);
+            new OverviewGreatestEstateDeveloper().setVisible(true);
+        });
+        latar.add(btn11, Integer.valueOf(1));
 
         JLabel bntg2 = new JLabel(scaledbntg2);
         bntg2.setBounds(1040, 285, 250, 393);
@@ -114,12 +172,36 @@ public class AllComic extends JFrame {
         pstr1.setBounds(110, 160, 150, 160);
         latar.add(pstr1, Integer.valueOf(1));
 
+        JButton btn1 = new JButton();
+        btn1.setBounds(110, 160, 150, 160);
+        btn1.setOpaque(false);
+        btn1.setContentAreaFilled(false);
+        btn1.setBorderPainted(false);
+        btn1.setFocusPainted(false);
+        btn1.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn1).setVisible(false);
+            new OverviewNanoMachine().setVisible(true);
+        });
+        latar.add(btn1, Integer.valueOf(1));
+
         ImageIcon Poster2 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-2.png")));
         ImageIcon scaledPoster2 = getScaledIcon(Poster2, 110, 160);
 
         JLabel pstr2 = new JLabel(scaledPoster2);
         pstr2.setBounds(280, 160, 150, 160);
         latar.add(pstr2, Integer.valueOf(1));
+
+        JButton btn2 = new JButton();
+        btn2.setBounds(280, 160, 150, 160);
+        btn2.setOpaque(false);
+        btn2.setContentAreaFilled(false);
+        btn2.setBorderPainted(false);
+        btn2.setFocusPainted(false);
+        btn2.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn2).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn2, Integer.valueOf(1));
 
         ImageIcon Poster6 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster3.png")));
         ImageIcon scaledPoster6 = getScaledIcon(Poster6, 110, 160);
@@ -128,12 +210,36 @@ public class AllComic extends JFrame {
         pstr6.setBounds(450, 160, 150, 160);
         latar.add(pstr6, Integer.valueOf(1));
 
+        JButton btn3 = new JButton();
+        btn3.setBounds(450, 160, 150, 160);
+        btn3.setOpaque(false);
+        btn3.setContentAreaFilled(false);
+        btn3.setBorderPainted(false);
+        btn3.setFocusPainted(false);
+        btn3.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn3).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn3, Integer.valueOf(1));
+
         ImageIcon Poster7 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-4.png")));
         ImageIcon scaledPoster7 = getScaledIcon(Poster7, 110, 160);
 
         JLabel pstr7 = new JLabel(scaledPoster7);
         pstr7.setBounds(620, 160, 150, 160);
         latar.add(pstr7, Integer.valueOf(1));
+
+        JButton btn4 = new JButton();
+        btn4.setBounds(620, 160, 150, 160);
+        btn4.setOpaque(false);
+        btn4.setContentAreaFilled(false);
+        btn4.setBorderPainted(false);
+        btn4.setFocusPainted(false);
+        btn4.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn4).setVisible(false);
+            new OverviewGreatestEstateDeveloper().setVisible(true);
+        });
+        latar.add(btn4, Integer.valueOf(1));
 
         ImageIcon Poster8 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-5.png")));
         ImageIcon scaledPoster8 = getScaledIcon(Poster8, 110, 160);
@@ -142,12 +248,36 @@ public class AllComic extends JFrame {
         pstr8.setBounds(110, 400, 150, 160);
         latar.add(pstr8, Integer.valueOf(1));
 
+        JButton btn5 = new JButton();
+        btn5.setBounds(110, 400, 150, 160);
+        btn5.setOpaque(false);
+        btn5.setContentAreaFilled(false);
+        btn5.setBorderPainted(false);
+        btn5.setFocusPainted(false);
+        btn5.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn5).setVisible(false);
+            new OverviewHeavenlyInquisition().setVisible(true);
+        });
+        latar.add(btn5, Integer.valueOf(1));
+
         ImageIcon Poster9 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-6.png")));
         ImageIcon scaledPoster9 = getScaledIcon(Poster9, 110, 160);
 
         JLabel pstr9 = new JLabel(scaledPoster9);
         pstr9.setBounds(280, 400, 150, 160);
         latar.add(pstr9, Integer.valueOf(1));
+
+        JButton btn6 = new JButton();
+        btn6.setBounds(280, 400, 150, 160);
+        btn6.setOpaque(false);
+        btn6.setContentAreaFilled(false);
+        btn6.setBorderPainted(false);
+        btn6.setFocusPainted(false);
+        btn6.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn6).setVisible(false);
+            new OverviewLogging10kYears().setVisible(true);
+        });
+        latar.add(btn6, Integer.valueOf(1));
 
         ImageIcon Poster10 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-7.png")));
         ImageIcon scaledPoster10 = getScaledIcon(Poster10, 110, 160);
@@ -156,6 +286,18 @@ public class AllComic extends JFrame {
         pstr10.setBounds(450, 400, 150, 160);
         latar.add(pstr10, Integer.valueOf(1));
 
+        JButton btn7 = new JButton();
+        btn7.setBounds(450, 400, 150, 160);
+        btn7.setOpaque(false);
+        btn7.setContentAreaFilled(false);
+        btn7.setBorderPainted(false);
+        btn7.setFocusPainted(false);
+        btn7.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn7).setVisible(false);
+            new OverviewAbsoluteRegression().setVisible(true);
+        });
+        latar.add(btn7, Integer.valueOf(1));
+
         ImageIcon Poster11 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-8.png")));
         ImageIcon scaledPoster11 = getScaledIcon(Poster11, 110, 160);
 
@@ -163,26 +305,17 @@ public class AllComic extends JFrame {
         pstr11.setBounds(620, 400, 150, 160);
         latar.add(pstr11, Integer.valueOf(1));
 
-        ImageIcon Poster3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-3.png")));
-        ImageIcon scaledPoster3 = getScaledIcon(Poster3, 110, 160);
-
-        JLabel pstr3 = new JLabel(scaledPoster3);
-        pstr3.setBounds(950, 50, 250, 393);
-        latar.add(pstr3, Integer.valueOf(1));
-
-        ImageIcon Poster4 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-2.png")));
-        ImageIcon scaledPoster4 = getScaledIcon(Poster4, 110, 160);
-
-        JLabel pstr4 = new JLabel(scaledPoster4);
-        pstr4.setBounds(950, 230, 250, 393);
-        latar.add(pstr4, Integer.valueOf(1));
-
-        ImageIcon Poster5 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-4.png")));
-        ImageIcon scaledPoster5 = getScaledIcon(Poster5, 110, 160);
-
-        JLabel pstr5 = new JLabel(scaledPoster5);
-        pstr5.setBounds(950, 410, 250, 393);
-        latar.add(pstr5, Integer.valueOf(1));
+        JButton btn8 = new JButton();
+        btn8.setBounds(620, 400, 150, 160);
+        btn8.setOpaque(false);
+        btn8.setContentAreaFilled(false);
+        btn8.setBorderPainted(false);
+        btn8.setFocusPainted(false);
+        btn8.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn8).setVisible(false);
+            new OverviewTheGameThatICameFrom().setVisible(true);
+        });
+        latar.add(btn8, Integer.valueOf(1));
 
         JLabel labelTeks1 = new JLabel("<html><span style='font-family:Poppins; font-size:16px; font-weight:bold;'> All Comics</span></html>");
         labelTeks1.setForeground(Color.WHITE);
@@ -194,7 +327,7 @@ public class AllComic extends JFrame {
         labelTeks2.setBounds(130, 320, 500, 50);
         latar.add(labelTeks2, Integer.valueOf(1));
 
-        JLabel labelTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 233</span></html>");
+        JLabel labelTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 234</span></html>");
         labelTeks3.setForeground(Color.WHITE);
         labelTeks3.setBounds(130, 325, 1000, 100);
         latar.add(labelTeks3, Integer.valueOf(1));

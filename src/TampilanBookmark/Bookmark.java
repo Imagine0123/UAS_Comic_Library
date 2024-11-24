@@ -1,6 +1,10 @@
 package TampilanBookmark;
 
 import TampilanMenu.MenuBar;
+import TampilanOverview.OverviewGreatestEstateDeveloper;
+import TampilanOverview.OverviewMountHua;
+import TampilanOverview.OverviewNanoMachine;
+import TampilanOverview.OverviewSoloLeveling;
 
 import javax.swing.*;
 import java.awt.*;
@@ -74,6 +78,41 @@ public class Bookmark extends JFrame {
         chapter2.setBounds(1150, 450, 1000, 100);
         latar.add(chapter2, Integer.valueOf(1));
 
+        JButton btn9 = new JButton();
+        btn9.setBounds(1020, 166, 110, 160);
+        btn9.setOpaque(false);
+        btn9.setContentAreaFilled(false);
+        btn9.setBorderPainted(false);
+        btn9.setFocusPainted(false);
+        btn9.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn9).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn9, Integer.valueOf(1));
+
+        JButton btn10 = new JButton();
+        btn10.setBounds(1020, 346, 110, 160);
+        btn10.setOpaque(false);
+        btn10.setContentAreaFilled(false);
+        btn10.setBorderPainted(false);
+        btn10.setFocusPainted(false);
+        btn10.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn10).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn10, Integer.valueOf(1));
+
+        JButton btn11 = new JButton();
+        btn11.setBounds(1020, 526, 110, 160);
+        btn11.setOpaque(false);
+        btn11.setContentAreaFilled(false);
+        btn11.setBorderPainted(false);
+        btn11.setFocusPainted(false);
+        btn11.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn11).setVisible(false);
+            new OverviewGreatestEstateDeveloper().setVisible(true);
+        });
+        latar.add(btn11, Integer.valueOf(1));
 
         addNumberBox(latar, 975, 595, 20, 20, 3);
         ImageIcon bintang3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Rate (1).png")));
@@ -115,12 +154,36 @@ public class Bookmark extends JFrame {
         pstr1.setBounds(130, 110, 250, 393);
         latar.add(pstr1, Integer.valueOf(1));
 
+        JButton btn1 = new JButton();
+        btn1.setBounds(130, 110, 250, 393);
+        btn1.setOpaque(false);
+        btn1.setContentAreaFilled(false);
+        btn1.setBorderPainted(false);
+        btn1.setFocusPainted(false);
+        btn1.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn1).setVisible(false);
+            new OverviewNanoMachine().setVisible(true);
+        });
+        latar.add(btn1, Integer.valueOf(1));
+
         ImageIcon Poster2 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster2.png")));
         ImageIcon scaledPoster2 = getScaledIcon(Poster2, 220, 323);
 
         JLabel pstr2 = new JLabel(scaledPoster2);
         pstr2.setBounds(380, 110, 250, 393);
         latar.add(pstr2, Integer.valueOf(1));
+
+        JButton btn2 = new JButton();
+        btn2.setBounds(380, 110, 250, 393);
+        btn2.setOpaque(false);
+        btn2.setContentAreaFilled(false);
+        btn2.setBorderPainted(false);
+        btn2.setFocusPainted(false);
+        btn2.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn2).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn2, Integer.valueOf(1));
 
         ImageIcon Poster3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-3.png")));
         ImageIcon scaledPoster3 = getScaledIcon(Poster3, 110, 160);
@@ -153,7 +216,7 @@ public class Bookmark extends JFrame {
         labelTeks2.setBounds(150, 410, 1000, 100);
         latar.add(labelTeks2, Integer.valueOf(1));
 
-        JLabel labelTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 233</span></html>");
+        JLabel labelTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 234</span></html>");
         labelTeks3.setForeground(Color.WHITE);
         labelTeks3.setBounds(150, 430, 1000, 100);
         latar.add(labelTeks3, Integer.valueOf(1));

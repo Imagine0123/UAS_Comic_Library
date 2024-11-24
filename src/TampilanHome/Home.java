@@ -1,11 +1,16 @@
 package TampilanHome;
 
 import TampilanMenu.MenuBar;
+import TampilanOverview.OverviewGreatestEstateDeveloper;
+import TampilanOverview.OverviewMountHua;
+import TampilanOverview.OverviewSoloLeveling;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.Objects;
+
+import static TampilanMenu.MenuBar.addNumberBox;
+import static TampilanMenu.MenuBar.getScaledIcon;
 
 public class Home extends JFrame {
     public Home() {
@@ -15,32 +20,6 @@ public class Home extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
         background();
-    }
-
-    private void addNumberBox(JLayeredPane latar, int x, int y, int width, int height, int number) {
-        JLabel numberBox = new JLabel(String.valueOf(number), SwingConstants.CENTER);
-        numberBox.setBounds(x, y, width, height);
-        numberBox.setFont(new Font("Poppins", Font.BOLD, 8));
-        numberBox.setForeground(Color.WHITE);
-        numberBox.setBackground(Color.decode("#B90F0F"));
-        numberBox.setOpaque(true);
-        latar.add(numberBox, Integer.valueOf(2));
-    }
-
-    private ImageIcon getScaledIcon(ImageIcon originalIcon, int targetWidth, int targetHeight) {
-        Image originalImage = originalIcon.getImage();
-        BufferedImage scaledImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = scaledImage.createGraphics();
-
-        // Aktifkan rendering berkualitas tinggi
-        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2d.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
-        g2d.dispose();
-
-        return new ImageIcon(scaledImage);
     }
 
     private void background() {
@@ -176,6 +155,42 @@ public class Home extends JFrame {
         form1.setBackground(new Color(0, 0, 0, 0));
         form1.setOpaque(false);
         latar.add(form1, Integer.valueOf(1));
+
+        JButton btn9 = new JButton();
+        btn9.setBounds(1020, 166, 110, 160);
+        btn9.setOpaque(false);
+        btn9.setContentAreaFilled(false);
+        btn9.setBorderPainted(false);
+        btn9.setFocusPainted(false);
+        btn9.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn9).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn9, Integer.valueOf(1));
+
+        JButton btn10 = new JButton();
+        btn10.setBounds(1020, 346, 110, 160);
+        btn10.setOpaque(false);
+        btn10.setContentAreaFilled(false);
+        btn10.setBorderPainted(false);
+        btn10.setFocusPainted(false);
+        btn10.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn10).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn10, Integer.valueOf(1));
+
+        JButton btn11 = new JButton();
+        btn11.setBounds(1020, 526, 110, 160);
+        btn11.setOpaque(false);
+        btn11.setContentAreaFilled(false);
+        btn11.setBorderPainted(false);
+        btn11.setFocusPainted(false);
+        btn11.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn11).setVisible(false);
+            new OverviewGreatestEstateDeveloper().setVisible(true);
+        });
+        latar.add(btn11, Integer.valueOf(1));
 
         MenuBar menuBar = new MenuBar();
         menuBar.setOpaque(false);

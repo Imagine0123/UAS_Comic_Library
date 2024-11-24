@@ -2,13 +2,15 @@ package TampilanOverview;
 
 import TampilanMenu.MenuBar;
 
+import static TampilanMenu.MenuBar.addNumberBox;
+import static TampilanMenu.MenuBar.getScaledIcon;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.Objects;
 
-public class Overview extends JFrame {
-    public Overview() {
+public class OverviewLogging10kYears extends JFrame {
+    public OverviewLogging10kYears() {
         setTitle("Overview");
         setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,32 +64,6 @@ public class Overview extends JFrame {
         }
     }
 
-    private void addNumberBox(JLayeredPane latar, int x, int y, int width, int height, int number) {
-        JLabel numberBox = new JLabel(String.valueOf(number), SwingConstants.CENTER);
-        numberBox.setBounds(x, y, width, height);
-        numberBox.setFont(new Font("Poppins", Font.BOLD, 8));
-        numberBox.setForeground(Color.WHITE);
-        numberBox.setBackground(Color.decode("#B90F0F"));
-        numberBox.setOpaque(true);
-        latar.add(numberBox, Integer.valueOf(2));
-    }
-
-    private ImageIcon getScaledIcon(ImageIcon originalIcon, int targetWidth, int targetHeight) {
-        Image originalImage = originalIcon.getImage();
-        BufferedImage scaledImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = scaledImage.createGraphics();
-
-        // Aktifkan rendering berkualitas tinggi
-        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2d.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
-        g2d.dispose();
-
-        return new ImageIcon(scaledImage);
-    }
-
     public class RoundedPanel extends JPanel {
 
         // Menentukan radius sudut
@@ -110,19 +86,19 @@ public class Overview extends JFrame {
     private void overview(){
         JLayeredPane latarinformasi = new JLayeredPane();
         latarinformasi.setBounds(0, 0, 1440, 1024);
-        ImageIcon PosterNano = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-2.png")));
+        ImageIcon PosterNano = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-6.png")));
         ImageIcon scaledPosterNanos = getScaledIcon(PosterNano, 200, 303);
 
         JLabel pstrNano = new JLabel(scaledPosterNanos);
         pstrNano.setBounds(130, 130, 250, 393);
         latarinformasi.add(pstrNano, Integer.valueOf(1));
 
-        JLabel Teks1 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> Followed By 3736 Peoples</span></html>");
+        JLabel Teks1 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> Followed By 3125 Peoples</span></html>");
         Teks1.setForeground(Color.WHITE);
         Teks1.setBounds(370, 160, 1000, 100);
         latarinformasi.add(Teks1, Integer.valueOf(1));
 
-        JLabel Teks2 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Return Of The Mount <br> Hua Sect</span></html>");
+        JLabel Teks2 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Logging 10,000 Years into the Future</span></html>");
         Teks2.setForeground(Color.WHITE);
         Teks2.setBounds(370, 195, 1000, 100);
         latarinformasi.add(Teks2, Integer.valueOf(1));
@@ -132,11 +108,13 @@ public class Overview extends JFrame {
         Teks3.setBounds(370, 235, 1000, 100);
         latarinformasi.add(Teks3, Integer.valueOf(1));
 
-        JLabel Teks4 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:bold;'> Chung Myung, The 13th Disciple of the Mount Hua Sect, One of the 3 Great Swordsmen, <br> " +
-                "Plum Blossom Sword Saint, defeated Chun Ma, who brought destruction and disarray <br> " +
-                "onto the world. After the battle, he breathes his last breath on top of the headquarter mountain" +
-                "<br> of the Heavenly Demon Sect. He is reborn after 100 years in the body of a child. ......What?" +
-                "<br> The Mount Hua Sect has fallen? What kind of nonsense is that!?</span></html>");
+        JLabel Teks4 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:bold;'> At the dawn of a revolution in the era of martial arts, hordes of terrifying monsters start <br> " +
+                "invading the world, defeating humanity's warriors one after another. One day, Lu Sheng finds <br> " +
+                "himself dreaming about the world ten thousand years into the future, where even basic" +
+                "<br> physical training techniques have been modified and become several thousand times more" +
+                "<br> effective! Breathing techniques, body strengthening remedies, martial arts scriptures, and so" +
+                "<br> on... But with humanity being extinct in the future world, these once great martial arts have" +
+                "<br> no one left to carry on their legacy. No one, except for Lu Sheng!</span></html>");
         Teks4.setForeground(Color.GRAY);
         Teks4.setBounds(370, 295, 1000, 100);
         latarinformasi.add(Teks4, Integer.valueOf(1));
@@ -158,7 +136,7 @@ public class Overview extends JFrame {
         gmbr.setBounds(290, 240, 250, 393);
         latarinformasi.add(gmbr, Integer.valueOf(1));
 
-        JLabel Teks7 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> Biga</span></html>");
+        JLabel Teks7 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> 每月一更</span></html>");
         Teks7.setForeground(Color.GRAY);
         Teks7.setBounds(550, 385, 1000, 100);
         latarinformasi.add(Teks7, Integer.valueOf(1));
@@ -168,7 +146,7 @@ public class Overview extends JFrame {
         Teks8.setBounds(370, 420, 1000, 100);
         latarinformasi.add(Teks8, Integer.valueOf(1));
 
-        JLabel Teks9 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> November 12th 2024</span></html>");
+        JLabel Teks9 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> November 24th 2024</span></html>");
         Teks9.setForeground(Color.GRAY);
         Teks9.setBounds(370, 440, 1000, 100);
         latarinformasi.add(Teks9, Integer.valueOf(1));
@@ -200,7 +178,7 @@ public class Overview extends JFrame {
         genrePanel3.setBounds(530, 530, 65, 20);
         genrePanel3.setBackground(Color.decode("#606060"));
         genrePanel3.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        JLabel genreLabel3 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Comedy</span></html>");
+        JLabel genreLabel3 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Fantasy</span></html>");
         genreLabel3.setForeground(Color.WHITE);
         genrePanel3.add(genreLabel3);
         latarinformasi.add(genrePanel3, Integer.valueOf(1));
@@ -214,7 +192,7 @@ public class Overview extends JFrame {
         genrePanel4.add(genreLabel4);
         latarinformasi.add(genrePanel4, Integer.valueOf(1));
 
-        JLabel Teks11 = new JLabel("<html><span style='font-family:Poppins; font-size:12px; font-weight:bold;'> Return Of The Mount Hua Sect’s Chapter</span></html>");
+        JLabel Teks11 = new JLabel("<html><span style='font-family:Poppins; font-size:12px; font-weight:bold;'> Logging 10,000 Years into the Future’s Chapter</span></html>");
         Teks11.setForeground(Color.WHITE);
         Teks11.setBounds(150, 550, 1000, 100);
         latarinformasi.add(Teks11, Integer.valueOf(1));
@@ -223,7 +201,7 @@ public class Overview extends JFrame {
         genrePanel5.setBounds(700, 530, 65, 20);
         genrePanel5.setBackground(Color.decode("#606060"));
         genrePanel5.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        JLabel genreLabel5 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Murim</span></html>");
+        JLabel genreLabel5 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Shounen</span></html>");
         genreLabel5.setForeground(Color.WHITE);
         genrePanel5.add(genreLabel5);
         latarinformasi.add(genrePanel5, Integer.valueOf(1));
@@ -232,7 +210,7 @@ public class Overview extends JFrame {
         genrePanel6.setBounds(775, 530, 90, 20);
         genrePanel6.setBackground(Color.decode("#606060"));
         genrePanel6.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        JLabel genreLabel6 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Regression</span></html>");
+        JLabel genreLabel6 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Supernatural</span></html>");
         genreLabel6.setForeground(Color.WHITE);
         genrePanel6.add(genreLabel6);
         latarinformasi.add(genrePanel6, Integer.valueOf(1));
@@ -250,7 +228,7 @@ public class Overview extends JFrame {
         status2.setBounds(150, 555, 205, 30);
         status2.setBackground(Color.decode("#606060"));
         status2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        JLabel stts2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Type Manhwa</span></html>");
+        JLabel stts2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Type Manhua</span></html>");
         stts2.setForeground(Color.WHITE);
         status2.add(stts2);
         latarinformasi.add(status2, Integer.valueOf(1));
@@ -270,8 +248,9 @@ public class Overview extends JFrame {
         chapterNumber.setForeground(Color.WHITE);
         chapterNumber.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        firstchapter.add(Box.createVerticalStrut(10));
         firstchapter.add(chapterTitle);
-        firstchapter.add(Box.createVerticalStrut(5));
+        firstchapter.add(Box.createVerticalStrut(4));
         firstchapter.add(chapterNumber);
 
         latarinformasi.add(firstchapter, Integer.valueOf(1));
@@ -285,14 +264,17 @@ public class Overview extends JFrame {
         lastchapterTitle.setFont(new Font("Poppins", Font.PLAIN, 8));
         lastchapterTitle.setForeground(Color.WHITE);
         lastchapterTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lastchapterTitle.setAlignmentY(JLabel.CENTER);
 
-        JLabel lastchapterNumber = new JLabel("Chapter 150");
+        JLabel lastchapterNumber = new JLabel("Chapter 171");
         lastchapterNumber.setFont(new Font("Poppins", Font.BOLD, 12));
         lastchapterNumber.setForeground(Color.WHITE);
         lastchapterNumber.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lastchapterNumber.setAlignmentY(JLabel.CENTER);
 
+        lastchapter.add(Box.createVerticalStrut(10));
         lastchapter.add(lastchapterTitle);
-        lastchapter.add(Box.createVerticalStrut(5));
+        lastchapter.add(Box.createVerticalStrut(4));
         lastchapter.add(lastchapterNumber);
 
         latarinformasi.add(lastchapter, Integer.valueOf(1));
@@ -376,6 +358,7 @@ public class Overview extends JFrame {
         chapter2.setBounds(1150, 450, 1000, 100);
         latar.add(chapter2, Integer.valueOf(1));
 
+
         addNumberBox(latar, 975, 595, 20, 20, 3);
         ImageIcon bintang3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Rate (1).png")));
         ImageIcon scaledbntg3 = getScaledIcon(bintang3, 30, 17);
@@ -425,7 +408,7 @@ public class Overview extends JFrame {
         labelTeks6.setBounds(985, 60, 1000, 100);
         latar.add(labelTeks6, Integer.valueOf(1));
 
-        JLabel labelTeks7 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:bold;'> NGOMIKMAS! > Nano Machine</span></html>");
+        JLabel labelTeks7 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:bold;'> NGOMIKMAS! > Logging 10,000 Years into the Future</span></html>");
         labelTeks7.setForeground(Color.WHITE);
         labelTeks7.setBounds(115, 45, 1000, 100);
         latar.add(labelTeks7, Integer.valueOf(1));
@@ -500,6 +483,41 @@ public class Overview extends JFrame {
         form3.setOpaque(false);
         latar.add(form3, Integer.valueOf(1));
 
+        JButton btn9 = new JButton();
+        btn9.setBounds(1020, 166, 110, 160);
+        btn9.setOpaque(false);
+        btn9.setContentAreaFilled(false);
+        btn9.setBorderPainted(false);
+        btn9.setFocusPainted(false);
+        btn9.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn9).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn9, Integer.valueOf(1));
+
+        JButton btn10 = new JButton();
+        btn10.setBounds(1020, 346, 110, 160);
+        btn10.setOpaque(false);
+        btn10.setContentAreaFilled(false);
+        btn10.setBorderPainted(false);
+        btn10.setFocusPainted(false);
+        btn10.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn10).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn10, Integer.valueOf(1));
+
+        JButton btn11 = new JButton();
+        btn11.setBounds(1020, 526, 110, 160);
+        btn11.setOpaque(false);
+        btn11.setContentAreaFilled(false);
+        btn11.setBorderPainted(false);
+        btn11.setFocusPainted(false);
+        btn11.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn11).setVisible(false);
+            new OverviewGreatestEstateDeveloper().setVisible(true);
+        });
+        latar.add(btn11, Integer.valueOf(1));
 
         MenuBar menuBar = new MenuBar();
         menuBar.setOpaque(false);
@@ -509,7 +527,7 @@ public class Overview extends JFrame {
     }
 
     public static void main(String[] args) {
-        Overview overview = new Overview();
-        overview.setVisible(true);
+        OverviewLogging10kYears overviewLogging10kYears = new OverviewLogging10kYears();
+        overviewLogging10kYears.setVisible(true);
     }
 }
