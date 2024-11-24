@@ -4,8 +4,10 @@ import TampilanMenu.MenuBar;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.Objects;
+
+import static TampilanMenu.MenuBar.addNumberBox;
+import static TampilanMenu.MenuBar.getScaledIcon;
 
 public class Bookmark extends JFrame {
     public Bookmark() {
@@ -15,32 +17,6 @@ public class Bookmark extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
         background();
-    }
-
-    private ImageIcon getScaledIcon(ImageIcon originalIcon, int targetWidth, int targetHeight) {
-        Image originalImage = originalIcon.getImage();
-        BufferedImage scaledImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = scaledImage.createGraphics();
-
-        // Aktifkan rendering berkualitas tinggi
-        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2d.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
-        g2d.dispose();
-
-        return new ImageIcon(scaledImage);
-    }
-
-    private void addNumberBox(JLayeredPane latar, int x, int y, int width, int height, int number) {
-        JLabel numberBox = new JLabel(String.valueOf(number), SwingConstants.CENTER);
-        numberBox.setBounds(x, y, width, height);
-        numberBox.setFont(new Font("Poppins", Font.BOLD, 8));
-        numberBox.setForeground(Color.WHITE);
-        numberBox.setBackground(Color.decode("#B90F0F"));
-        numberBox.setOpaque(true);
-        latar.add(numberBox, Integer.valueOf(2));
     }
 
     private void background() {
