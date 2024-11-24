@@ -120,16 +120,12 @@ public class MenuBar extends JMenuBar {
 
         JMenu profileMenu = new JMenu("<html><span style='font-family:Poppins; font-size:15px; font-weight:bold; color:black;'>Profile</span></html>");
         profileMenu.setFont(new Font("Poppins", Font.BOLD, 14));
-        JMenuItem userItem = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>User</span></html>");
-        userItem.setFont(new Font("Poppins", Font.BOLD, 14));
         JMenuItem logoutItem = new JMenuItem("<html><span style='font-family:Poppins; font-size:15px; font-weight:normal;'>Logout</span></html>");
         logoutItem.setFont(new Font("Poppins", Font.BOLD, 14));
         logoutItem.addActionListener(e -> {
             SwingUtilities.getWindowAncestor(this).setVisible(false);
             new Login().setVisible(true);
         });
-
-        profileMenu.add(userItem);
         profileMenu.add(logoutItem);
 
         add(homeMenu);

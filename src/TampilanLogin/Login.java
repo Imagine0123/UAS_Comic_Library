@@ -118,6 +118,8 @@ public class Login extends JFrame {
                 errorLabel.setText("Email atau Password salah. Coba lagi.");
                 emailField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
                 passwordField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
+                emailField.requestFocus();
+                passwordField.setText("");
             }
         });
 
