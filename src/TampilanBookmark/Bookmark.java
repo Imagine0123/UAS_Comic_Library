@@ -68,7 +68,7 @@ public class Bookmark extends JFrame {
         judulTeks2.setBounds(1150, 380, 1000, 100);
         latar.add(judulTeks2, Integer.valueOf(1));
 
-        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Comedy, Fantasy, Martial Arts</span></html>");
+        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Adventure, Comedy, Martial Arts</span></html>");
         jenis2.setForeground(Color.WHITE);
         jenis2.setBounds(1150, 410, 1000, 100);
         latar.add(jenis2, Integer.valueOf(1));

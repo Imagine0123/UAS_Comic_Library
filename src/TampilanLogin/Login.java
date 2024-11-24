@@ -107,20 +107,17 @@ public class Login extends JFrame {
         errorLabel.setBounds(30, 185, 340, 20);
         form.add(errorLabel);
 
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String email = emailField.getText();
-                String password = new String(passwordField.getPassword());
+        loginButton.addActionListener(e -> {
+            String email = emailField.getText();
+            String password = new String(passwordField.getPassword());
 
-                if (email.equals(VALID_EMAIL) && password.equals(VALID_PASSWORD)) {
-                    setVisible(false);
-                    new Home().setVisible(true);
-                } else {
-                    errorLabel.setText("Email atau Password salah. Coba lagi.");
-                    emailField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
-                    passwordField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
-                }
+            if (email.equals(VALID_EMAIL) && password.equals(VALID_PASSWORD)) {
+                setVisible(false);
+                new Home().setVisible(true);
+            } else {
+                errorLabel.setText("Email atau Password salah. Coba lagi.");
+                emailField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
+                passwordField.setBorder(BorderFactory.createLineBorder(Color.decode("#B90F0F"), 1));
             }
         });
 

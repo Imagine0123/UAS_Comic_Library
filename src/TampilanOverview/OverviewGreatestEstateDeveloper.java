@@ -168,7 +168,7 @@ public class OverviewGreatestEstateDeveloper extends JFrame {
         genrePanel2.setBounds(440, 530, 80, 20);
         genrePanel2.setBackground(Color.decode("#606060"));
         genrePanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        JLabel genreLabel2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Advanture</span></html>");
+        JLabel genreLabel2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Adventure</span></html>");
         genreLabel2.setForeground(Color.WHITE);
         genrePanel2.add(genreLabel2);
         latarinformasi.add(genrePanel2, Integer.valueOf(1));
@@ -329,7 +329,7 @@ public class OverviewGreatestEstateDeveloper extends JFrame {
         judulTeks2.setBounds(1150, 380, 1000, 100);
         latar.add(judulTeks2, Integer.valueOf(1));
 
-        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Comedy, Fantasy, Martial Arts</span></html>");
+        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Adventure, Comedy, Martial Arts</span></html>");
         jenis2.setForeground(Color.WHITE);
         jenis2.setBounds(1150, 410, 1000, 100);
         latar.add(jenis2, Integer.valueOf(1));
@@ -464,6 +464,41 @@ public class OverviewGreatestEstateDeveloper extends JFrame {
         form3.setOpaque(false);
         latar.add(form3, Integer.valueOf(1));
 
+        JButton btn9 = new JButton();
+        btn9.setBounds(1020, 166, 110, 160);
+        btn9.setOpaque(false);
+        btn9.setContentAreaFilled(false);
+        btn9.setBorderPainted(false);
+        btn9.setFocusPainted(false);
+        btn9.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn9).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn9, Integer.valueOf(1));
+
+        JButton btn10 = new JButton();
+        btn10.setBounds(1020, 346, 110, 160);
+        btn10.setOpaque(false);
+        btn10.setContentAreaFilled(false);
+        btn10.setBorderPainted(false);
+        btn10.setFocusPainted(false);
+        btn10.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn10).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn10, Integer.valueOf(1));
+
+        JButton btn11 = new JButton();
+        btn11.setBounds(1020, 526, 110, 160);
+        btn11.setOpaque(false);
+        btn11.setContentAreaFilled(false);
+        btn11.setBorderPainted(false);
+        btn11.setFocusPainted(false);
+        btn11.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn11).setVisible(false);
+            new OverviewGreatestEstateDeveloper().setVisible(true);
+        });
+        latar.add(btn11, Integer.valueOf(1));
 
         MenuBar menuBar = new MenuBar();
         menuBar.setOpaque(false);

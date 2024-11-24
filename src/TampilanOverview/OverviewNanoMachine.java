@@ -144,7 +144,7 @@ public class OverviewNanoMachine extends JFrame {
         Teks8.setBounds(370, 420, 1000, 100);
         latarinformasi.add(Teks8, Integer.valueOf(1));
 
-        JLabel Teks9 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> November 24th 2024</span></html>");
+        JLabel Teks9 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'> November 20th 2024</span></html>");
         Teks9.setForeground(Color.GRAY);
         Teks9.setBounds(370, 440, 1000, 100);
         latarinformasi.add(Teks9, Integer.valueOf(1));
@@ -167,7 +167,7 @@ public class OverviewNanoMachine extends JFrame {
         genrePanel2.setBounds(440, 530, 80, 20);
         genrePanel2.setBackground(Color.decode("#606060"));
         genrePanel2.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        JLabel genreLabel2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Advanture</span></html>");
+        JLabel genreLabel2 = new JLabel("<html><span style='font-family:Poppins; font-size:8px; font-weight:normal;'>Adventure</span></html>");
         genreLabel2.setForeground(Color.WHITE);
         genrePanel2.add(genreLabel2);
         latarinformasi.add(genrePanel2, Integer.valueOf(1));
@@ -346,7 +346,7 @@ public class OverviewNanoMachine extends JFrame {
         judulTeks2.setBounds(1150, 380, 1000, 100);
         latar.add(judulTeks2, Integer.valueOf(1));
 
-        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Comedy, Fantasy, Martial Arts</span></html>");
+        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Adventure, Comedy, Martial Arts</span></html>");
         jenis2.setForeground(Color.WHITE);
         jenis2.setBounds(1150, 410, 1000, 100);
         latar.add(jenis2, Integer.valueOf(1));

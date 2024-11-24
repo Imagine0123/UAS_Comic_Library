@@ -122,7 +122,7 @@ public class AllComic extends JFrame {
         judulTeks2.setBounds(1150, 390, 1000, 100);
         latar.add(judulTeks2, Integer.valueOf(1));
 
-        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Comedy, Fantasy, Martial Arts</span></html>");
+        JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Adventure, Comedy, Martial Arts</span></html>");
         jenis2.setForeground(Color.WHITE);
         jenis2.setBounds(1150, 410, 1000, 100);
         latar.add(jenis2, Integer.valueOf(1));
@@ -397,7 +397,7 @@ public class AllComic extends JFrame {
         labelTeks16.setBounds(640, 550, 500, 50);
         latar.add(labelTeks16, Integer.valueOf(1));
 
-        JLabel labelTeks17 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 224</span></html>");
+        JLabel labelTeks17 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 319</span></html>");
         labelTeks17.setForeground(Color.WHITE);
         labelTeks17.setBounds(640, 555, 1000, 100);
         latar.add(labelTeks17, Integer.valueOf(1));

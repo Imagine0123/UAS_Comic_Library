@@ -41,7 +41,6 @@ public class MenuBar extends JMenuBar {
         latar.add(numberBox, Integer.valueOf(2));
     }
 
-
     public MenuBar() {
         setBorderPainted(false);
         setFont(new Font("Poppins", Font.BOLD, 14));
