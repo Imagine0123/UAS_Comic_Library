@@ -16,6 +16,7 @@ public class Overview extends JFrame {
         background();
     }
 
+
     private void background() {
         JLayeredPane latar = new JLayeredPane();
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
