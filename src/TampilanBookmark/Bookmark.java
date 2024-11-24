@@ -83,9 +83,9 @@ public class Bookmark extends JFrame {
         bntg2.setBounds(1040, 285, 250, 393);
         latar.add(bntg2, Integer.valueOf(1));
 
-        JLabel judulTeks2 = new JLabel("<html><span style='font-family:Poppins; font-size:12px; font-weight:bold;'> Return Of The M...</span></html>");
+        JLabel judulTeks2 = new JLabel("<html><span style='font-family:Poppins; font-size:12px; font-weight:bold;'> Return Of The Mou<br>Hua Sect</span></html>");
         judulTeks2.setForeground(Color.WHITE);
-        judulTeks2.setBounds(1150, 390, 1000, 100);
+        judulTeks2.setBounds(1150, 380, 1000, 100);
         latar.add(judulTeks2, Integer.valueOf(1));
 
         JLabel jenis2 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Comedy, Fantasy, Martial Arts</span></html>");
@@ -107,9 +107,9 @@ public class Bookmark extends JFrame {
         bntg3.setBounds(1040, 465, 250, 393);
         latar.add(bntg3, Integer.valueOf(1));
 
-        JLabel judulTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:12px; font-weight:bold;'>The Greatest Estate<br>D...</span></html>");
+        JLabel judulTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:12px; font-weight:bold;'>The Greatest Estate<br>Developer</span></html>");
         judulTeks3.setForeground(Color.WHITE);
-        judulTeks3.setBounds(1150, 550, 1000, 100);
+        judulTeks3.setBounds(1150, 560, 1000, 100);
         latar.add(judulTeks3, Integer.valueOf(1));
 
         JLabel jenis3 = new JLabel("<html><span style='font-family:Poppins; font-size:6px; font-weight:normal;'> Action, Adventure, Comedy, Fantasy</span></html>");
