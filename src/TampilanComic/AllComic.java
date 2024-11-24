@@ -8,7 +8,6 @@ import java.util.Objects;
 
 public class AllComic extends JFrame {
     public AllComic() {
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("NGOMIKMAS!");
         setSize(1440, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,7 +18,6 @@ public class AllComic extends JFrame {
 
     private void background() {
         JLayeredPane latar = new JLayeredPane();
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         latar.setBounds(0, 0, 1440, 1024);
 
         ImageIcon Background = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Background.png")));
