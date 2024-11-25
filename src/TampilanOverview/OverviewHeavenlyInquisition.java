@@ -113,8 +113,7 @@ public class OverviewHeavenlyInquisition extends JFrame {
                 "Viciously bullied by his father's first wife and his siblings, he was later imprisoned in a" +
                 "<br> warehouse after his father died of illness...It has been ten years since his escape after he had" +
                 "<br> learned martial arts that were out of the world.\"I regard the Yeon Family with great" +
-                "<br> bitterness.\"The unstoppable adventure of the sole successor of the Heavenly Inquisition" +
-                "<br> Sword, Yeon Jeokha, begins now!</span></html>");
+                "<br> bitterness.\"The unstoppable adventure of the sole successor of the Heavenly Inquisition...</span></html>");
         Teks4.setForeground(Color.GRAY);
         Teks4.setBounds(370, 295, 1000, 100);
         latarinformasi.add(Teks4, Integer.valueOf(1));

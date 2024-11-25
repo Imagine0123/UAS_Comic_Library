@@ -8,6 +8,8 @@ import TampilanOverview.OverviewSoloLeveling;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
+import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
 
 import static TampilanMenu.MenuBar.addNumberBox;
 import static TampilanMenu.MenuBar.getScaledIcon;
@@ -20,6 +22,41 @@ public class Home extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
         background();
+    }
+
+    public class RoundedImagePanel extends JPanel {
+        private final Image image;
+        private final int cornerRadius;
+
+        public RoundedImagePanel(Image image, int cornerRadius) {
+            this.image = image;
+            this.cornerRadius = cornerRadius;
+            this.setOpaque(false);
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            if (image != null) {
+                int width = getWidth();
+                int height = getHeight();
+
+                BufferedImage roundedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+                Graphics2D g2 = roundedImage.createGraphics();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                // Buat bentuk dengan sudut melingkar
+                RoundRectangle2D roundedRectangle = new RoundRectangle2D.Float(0, 0, width, height, cornerRadius, cornerRadius);
+
+                // Gambar ke dalam bentuk tersebut
+                g2.setClip(roundedRectangle);
+                g2.drawImage(image, 0, 0, width, height, this);
+                g2.dispose();
+
+                // Gambar hasil ke layar
+                g.drawImage(roundedImage, 0, 0, this);
+            }
+        }
     }
 
     private void background() {
@@ -82,7 +119,6 @@ public class Home extends JFrame {
         chapter2.setForeground(Color.WHITE);
         chapter2.setBounds(1150, 450, 1000, 100);
         latar.add(chapter2, Integer.valueOf(1));
-
 
         addNumberBox(latar, 975, 595, 20, 20, 3);
         ImageIcon bintang3 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Rate (1).png")));
@@ -155,6 +191,130 @@ public class Home extends JFrame {
         form1.setBackground(new Color(0, 0, 0, 0));
         form1.setOpaque(false);
         latar.add(form1, Integer.valueOf(1));
+
+        JPanel form2 = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                int radius = 25;
+                int thickness = 2;
+                int xOffset = thickness / 2;
+                int yOffset = thickness / 2;
+
+                g2d.setColor(Color.decode("#6A6A6A"));
+                g2d.setStroke(new BasicStroke(thickness));
+                g2d.drawRoundRect(xOffset, yOffset, getWidth() - thickness, getHeight() - thickness, radius, radius);
+            }
+        };
+        form2.setLayout(null);
+        form2.setBounds(100, 310, 800, 410);
+        form2.setBackground(new Color(0, 0, 0, 0));
+        form2.setOpaque(false);
+        latar.add(form2, Integer.valueOf(1));
+
+        ImageIcon Poster1 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster1.png")));
+        ImageIcon scaledPoster1 = getScaledIcon(Poster1, 220, 323);
+
+        JLabel pstr1 = new JLabel(scaledPoster1);
+        pstr1.setBounds(120, 330, 250, 393);
+        latar.add(pstr1, Integer.valueOf(1));
+
+        ImageIcon Poster2 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster2.png")));
+        ImageIcon scaledPoster2 = getScaledIcon(Poster2, 220, 323);
+
+        JLabel pstr2 = new JLabel(scaledPoster2);
+        pstr2.setBounds(370, 330, 250, 393);
+        latar.add(pstr2, Integer.valueOf(1));
+
+        JLabel labelTeks2 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Nano Machine</span></html>");
+        labelTeks2.setForeground(Color.WHITE);
+        labelTeks2.setBounds(140, 630, 1000, 100);
+        latar.add(labelTeks2, Integer.valueOf(2));
+
+        JLabel labelTeks3 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 234</span></html>");
+        labelTeks3.setForeground(Color.WHITE);
+        labelTeks3.setBounds(140, 650, 1000, 100);
+        latar.add(labelTeks3, Integer.valueOf(2));
+
+        ImageIcon Poster10 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster4.png")));
+        ImageIcon scaledPoster10 = getScaledIcon(Poster10, 220, 323);
+
+        JLabel pstr10 = new JLabel(scaledPoster10);
+        pstr10.setBounds(620, 330, 250, 393);
+        latar.add(pstr10, Integer.valueOf(1));
+
+        JLabel labelTeks4 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Return Of The M...</span></html>");
+        labelTeks4.setForeground(Color.WHITE);
+        labelTeks4.setBounds(380, 630, 1000, 100);
+        latar.add(labelTeks4, Integer.valueOf(2));
+
+        JLabel labelTeks5 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 149</span></html>");
+        labelTeks5.setForeground(Color.WHITE);
+        labelTeks5.setBounds(380, 650, 1000, 100);
+        latar.add(labelTeks5, Integer.valueOf(2));
+
+        ImageIcon PosterRounded = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/header.png")));
+        Image scaledPosterRounded = PosterRounded.getImage().getScaledInstance(870, 277, Image.SCALE_SMOOTH);
+
+        RoundedImagePanel roundedImagePanel = new RoundedImagePanel(scaledPosterRounded, 10);
+        roundedImagePanel.setBounds(100, 70, 800, 230);
+        latar.add(roundedImagePanel, Integer.valueOf(2));
+
+        ImageIcon Poster11 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster3.png")));
+        ImageIcon scaledPoster11 = getScaledIcon(Poster11, 150, 200);
+
+        JLabel pstr11 = new JLabel(scaledPoster11);
+        pstr11.setBounds(650, 30, 250, 313);
+        latar.add(pstr11, Integer.valueOf(3));
+
+        JLabel labelTeks8 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Reincarnation of...</span></html>");
+        labelTeks8.setForeground(Color.WHITE);
+        labelTeks8.setBounds(630, 630, 1000, 100);
+        latar.add(labelTeks8, Integer.valueOf(2));
+
+        JLabel labelTeks7 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 102</span></html>");
+        labelTeks7.setForeground(Color.WHITE);
+        labelTeks7.setBounds(630, 650, 1000, 100);
+        latar.add(labelTeks7, Integer.valueOf(2));
+
+        JLabel labelLatesUpdate = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Latest Updates</span></html>");
+        labelLatesUpdate.setForeground(Color.WHITE);
+        labelLatesUpdate.setBounds(140, 290, 1000, 100);
+        latar.add(labelLatesUpdate, Integer.valueOf(2));
+
+        JLabel labeljudul = new JLabel("<html><span style='font-family:Poppins; font-size:20px;  font-weight:italic;'> SOLO LEVELING</span></html>");
+        labeljudul.setForeground(Color.WHITE);
+        labeljudul.setBounds(120, 70, 1000, 100);
+        latar.add(labeljudul, Integer.valueOf(3));
+
+        JLabel labeljenis = new JLabel("<html><span style='font-family:Poppins; font-size:10px;  font-weight:italic;'> Action, Adventure, Fantasy, Shounen</span></html>");
+        labeljenis.setForeground(Color.WHITE);
+        labeljenis.setBounds(120, 100, 1000, 100);
+        latar.add(labeljenis, Integer.valueOf(3));
+
+        JLabel labelsinopsis = new JLabel("<html><span style='font-family:Poppins; font-size:12px;  font-weight:bold;'> Synopsis</span></html>");
+        labelsinopsis.setForeground(Color.WHITE);
+        labelsinopsis.setBounds(120, 120, 1000, 100);
+        latar.add(labelsinopsis, Integer.valueOf(3));
+
+        JLabel labeldeskripsi = new JLabel("<html><span style='font-family:Poppins; font-size:8px;  font-weight:normal;'> 10 years ago, after “the Gate” that connected the real world with the monster world opened, " +
+                "<br>some of the ordinary, everyday people received the power to hunt monsters...</span></html>");
+        labeldeskripsi.setForeground(Color.WHITE);
+        labeldeskripsi.setBounds(120, 150, 1000, 100);
+        latar.add(labeldeskripsi, Integer.valueOf(3));
+
+        JLabel labelstatus = new JLabel("<html><span style='font-family:Poppins; font-size:12px;  font-weight:normal;'>Status : Ongoing</span></html>");
+        labelstatus.setForeground(Color.WHITE);
+        labelstatus.setBounds(120, 180, 1000, 100);
+        latar.add(labelstatus, Integer.valueOf(3));
+
+        JLabel labelinformasi = new JLabel("<html><span style='font-family:Poppins; font-size:10px;  font-weight:normal;'>Click For More...</span></html>");
+        labelinformasi.setForeground(Color.WHITE);
+        labelinformasi.setBounds(470, 230, 1000, 100);
+        latar.add(labelinformasi, Integer.valueOf(3));
 
         JButton btn9 = new JButton();
         btn9.setBounds(1020, 166, 110, 160);

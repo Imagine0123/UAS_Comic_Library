@@ -112,9 +112,7 @@ public class OverviewLogging10kYears extends JFrame {
                 "invading the world, defeating humanity's warriors one after another. One day, Lu Sheng finds <br> " +
                 "himself dreaming about the world ten thousand years into the future, where even basic" +
                 "<br> physical training techniques have been modified and become several thousand times more" +
-                "<br> effective! Breathing techniques, body strengthening remedies, martial arts scriptures, and so" +
-                "<br> on... But with humanity being extinct in the future world, these once great martial arts have" +
-                "<br> no one left to carry on their legacy. No one, except for Lu Sheng!</span></html>");
+                "<br> effective! Breathing techniques, body strengthening remedies, martial arts scriptures, and so...</span></html>");
         Teks4.setForeground(Color.GRAY);
         Teks4.setBounds(370, 295, 1000, 100);
         latarinformasi.add(Teks4, Integer.valueOf(1));
