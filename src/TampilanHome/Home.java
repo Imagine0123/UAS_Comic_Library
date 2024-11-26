@@ -1,9 +1,7 @@
 package TampilanHome;
 
 import TampilanMenu.MenuBar;
-import TampilanOverview.OverviewGreatestEstateDeveloper;
-import TampilanOverview.OverviewMountHua;
-import TampilanOverview.OverviewSoloLeveling;
+import TampilanOverview.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -239,12 +237,17 @@ public class Home extends JFrame {
         labelTeks3.setBounds(140, 650, 1000, 100);
         latar.add(labelTeks3, Integer.valueOf(2));
 
-        ImageIcon Poster10 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Poster4.png")));
-        ImageIcon scaledPoster10 = getScaledIcon(Poster10, 220, 323);
-
-        JLabel pstr10 = new JLabel(scaledPoster10);
-        pstr10.setBounds(620, 330, 250, 393);
-        latar.add(pstr10, Integer.valueOf(1));
+        JButton btn1 = new JButton();
+        btn1.setBounds(135, 360, 220, 313);
+        btn1.setOpaque(false);
+        btn1.setContentAreaFilled(false);
+        btn1.setBorderPainted(false);
+        btn1.setFocusPainted(false);
+        btn1.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn1).setVisible(false);
+            new OverviewNanoMachine().setVisible(true);
+        });
+        latar.add(btn1, Integer.valueOf(1));
 
         JLabel labelTeks4 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Return Of The M...</span></html>");
         labelTeks4.setForeground(Color.WHITE);
@@ -255,6 +258,18 @@ public class Home extends JFrame {
         labelTeks5.setForeground(Color.WHITE);
         labelTeks5.setBounds(380, 650, 1000, 100);
         latar.add(labelTeks5, Integer.valueOf(2));
+
+        JButton btn2 = new JButton();
+        btn2.setBounds(380, 360, 220, 313);
+        btn2.setOpaque(false);
+        btn2.setContentAreaFilled(false);
+        btn2.setBorderPainted(false);
+        btn2.setFocusPainted(false);
+        btn2.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn2).setVisible(false);
+            new OverviewMountHua().setVisible(true);
+        });
+        latar.add(btn2, Integer.valueOf(1));
 
         ImageIcon PosterRounded = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/header.png")));
         Image scaledPosterRounded = PosterRounded.getImage().getScaledInstance(870, 277, Image.SCALE_SMOOTH);
@@ -270,15 +285,46 @@ public class Home extends JFrame {
         pstr11.setBounds(650, 30, 250, 313);
         latar.add(pstr11, Integer.valueOf(3));
 
-        JLabel labelTeks8 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Reincarnation of...</span></html>");
+        JButton btn3 = new JButton();
+        btn3.setBounds(100, 70, 800, 230);
+        btn3.setOpaque(false);
+        btn3.setContentAreaFilled(false);
+        btn3.setBorderPainted(false);
+        btn3.setFocusPainted(false);
+        btn3.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn2).setVisible(false);
+            new OverviewSoloLeveling().setVisible(true);
+        });
+        latar.add(btn3, Integer.valueOf(1));
+
+        ImageIcon Poster10 = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/poster-6.png")));
+        ImageIcon scaledPoster10 = getScaledIcon(Poster10, 220, 313);
+
+        JLabel pstr10 = new JLabel(scaledPoster10);
+        pstr10.setBounds(630, 360, 220, 313);
+        latar.add(pstr10, Integer.valueOf(1));
+
+        JLabel labelTeks8 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Logging 10,000...</span></html>");
         labelTeks8.setForeground(Color.WHITE);
         labelTeks8.setBounds(630, 630, 1000, 100);
         latar.add(labelTeks8, Integer.valueOf(2));
 
-        JLabel labelTeks7 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 102</span></html>");
+        JLabel labelTeks7 = new JLabel("<html><span style='font-family:Poppins; font-size:10px; font-weight:normal;'> Chapter 171</span></html>");
         labelTeks7.setForeground(Color.WHITE);
         labelTeks7.setBounds(630, 650, 1000, 100);
         latar.add(labelTeks7, Integer.valueOf(2));
+
+        JButton btn4 = new JButton();
+        btn4.setBounds(630, 360, 220, 313);
+        btn4.setOpaque(false);
+        btn4.setContentAreaFilled(false);
+        btn4.setBorderPainted(false);
+        btn4.setFocusPainted(false);
+        btn4.addActionListener(e -> {
+            SwingUtilities.getWindowAncestor(btn2).setVisible(false);
+            new OverviewLogging10kYears().setVisible(true);
+        });
+        latar.add(btn4, Integer.valueOf(1));
 
         JLabel labelLatesUpdate = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Latest Updates</span></html>");
         labelLatesUpdate.setForeground(Color.WHITE);
