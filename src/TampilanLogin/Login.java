@@ -15,12 +15,37 @@ import TampilanHome.Home;
 public class Login extends JFrame {
     private static final Map<String, String> users = new HashMap<>();
 
+    private static final String CONFIG_FILE = "remember_me_config.txt";
+
+    private void saveLoginConfig(String email) {
+        try {
+            if (email != null) {
+                java.nio.file.Files.write(java.nio.file.Paths.get(CONFIG_FILE), email.getBytes());
+            } else {
+                java.nio.file.Files.deleteIfExists(java.nio.file.Paths.get(CONFIG_FILE));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String readLoginConfig() {
+        try {
+            if (java.nio.file.Files.exists(java.nio.file.Paths.get(CONFIG_FILE))) {
+                return new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(CONFIG_FILE)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     static {
         users.put("dimas.rasyach@gmail.com", hashPassword("dimas1234"));
         users.put("rafdi.nur@gmail.com", hashPassword("rafdi1234"));
         users.put("alya.rahma@gmail.com", hashPassword("alya1234"));
         users.put("ivan.gustav@gmail.com", hashPassword("ivan1234"));
-        users.put("dosen.radinal@gmail.com", hashPassword("radinal1234"));
+        users.put("dosen@gmail.com", hashPassword("dosen1234"));
     }
 
     private static String bytesToHex(byte[] bytes) {
@@ -143,11 +168,23 @@ public class Login extends JFrame {
         errorLabel.setBounds(30, 185, 340, 20);
         form.add(errorLabel);
 
+        String savedEmail = readLoginConfig();
+        if (savedEmail != null) {
+            emailField.setText(savedEmail);
+            rememberMe.setSelected(true);
+        }
+
         loginButton.addActionListener(e -> {
             String email = emailField.getText();
             String password = passwordField.getText();
 
             if (users.containsKey(email) && users.get(email).equals(hashPassword(password))) {
+                if (rememberMe.isSelected()) {
+                    saveLoginConfig(email);
+                } else {
+                    saveLoginConfig(null);
+                }
+
                 setVisible(false);
                 new Home().setVisible(true);
             } else {
