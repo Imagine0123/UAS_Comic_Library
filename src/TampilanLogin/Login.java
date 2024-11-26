@@ -3,11 +3,47 @@ package TampilanLogin;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 import TampilanHome.Home;
 
 public class Login extends JFrame {
-    private static final String VALID_EMAIL = "dimas.rasyach@gmail.com";
-    private static final String VALID_PASSWORD = "dimas1234";
+    private static final Map<String, String> users = new HashMap<>();
+
+    static {
+        users.put("dimas.rasyach@gmail.com", hashPassword("dimas1234"));
+        users.put("rafdi.nur@gmail.com", hashPassword("rafdi1234"));
+        users.put("alya.rahma@gmail.com", hashPassword("alya1234"));
+        users.put("ivan.gustav@gmail.com", hashPassword("ivan1234"));
+        users.put("dosen.radinal@gmail.com", hashPassword("radinal1234"));
+    }
+
+    private static String bytesToHex(byte[] bytes) {
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : bytes) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
+    }
+
+    private static String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
+            return bytesToHex(hashBytes);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public Login() {
         setTitle("NGOMIKMAS!");
@@ -22,7 +58,7 @@ public class Login extends JFrame {
         JLayeredPane latar = new JLayeredPane();
         latar.setBounds(0, 0, 1440, 1024);
 
-        ImageIcon Background = new ImageIcon(getClass().getResource("/images/Background.png"));
+        ImageIcon Background = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Background.png")));
         JLabel gambar = new JLabel(Background);
         gambar.setBounds(0, 0, 1440, 1024);
         latar.add(gambar, Integer.valueOf(0));
@@ -109,9 +145,9 @@ public class Login extends JFrame {
 
         loginButton.addActionListener(e -> {
             String email = emailField.getText();
-            String password = new String(passwordField.getPassword());
+            String password = passwordField.getText();
 
-            if (email.equals(VALID_EMAIL) && password.equals(VALID_PASSWORD)) {
+            if (users.containsKey(email) && users.get(email).equals(hashPassword(password))) {
                 setVisible(false);
                 new Home().setVisible(true);
             } else {
