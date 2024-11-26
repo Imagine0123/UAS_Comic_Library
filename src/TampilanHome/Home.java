@@ -301,7 +301,7 @@ public class Home extends JFrame {
         ImageIcon scaledPoster10 = getScaledIcon(Poster10, 220, 313);
 
         JLabel pstr10 = new JLabel(scaledPoster10);
-        pstr10.setBounds(630, 360, 220, 313);
+        pstr10.setBounds(630, 365, 220, 313);
         latar.add(pstr10, Integer.valueOf(1));
 
         JLabel labelTeks8 = new JLabel("<html><span style='font-family:Poppins; font-size:14px; font-weight:bold;'> Logging 10,000...</span></html>");
@@ -315,7 +315,7 @@ public class Home extends JFrame {
         latar.add(labelTeks7, Integer.valueOf(2));
 
         JButton btn4 = new JButton();
-        btn4.setBounds(630, 360, 220, 313);
+        btn4.setBounds(630, 365, 220, 313);
         btn4.setOpaque(false);
         btn4.setContentAreaFilled(false);
         btn4.setBorderPainted(false);
